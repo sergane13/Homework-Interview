@@ -1,21 +1,15 @@
+import React, { useState } from "react";
+import Content from "./content/Content";
+import SearchBar from "./search-bar/SearchBar";
 
 function App() {
+  const [content, setContent] = useState<string>('');
+
   return (
-    <div style={{ textAlign: 'center', padding: '20px' }}>
-      <input
-        type="text"
-        value={0}
-        style={{
-          padding: '10px',
-          fontSize: '16px',
-          width: '300px',
-          marginBottom: '20px',
-          border: '1px solid #ccc',
-          borderRadius: '5px',
-        }}
-      />
-      <p>Query: <strong> ... </strong></p>
-    </div>
+    <React.Fragment>
+      <SearchBar setContent= {setContent } />
+      <Content content={ content}/>
+    </React.Fragment>
   );
 }
 
